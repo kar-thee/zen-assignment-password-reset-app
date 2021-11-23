@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet } from "react-router";
 import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [state, setState] = useState({
-    login: false,
-    register: false,
-    forgotPassword: false,
-  });
-
   return (
     <div>
       <>

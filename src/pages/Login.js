@@ -93,7 +93,7 @@ const Login = () => {
                 </div>
                 <div className="d-flex justify-content-between mb-3">
                   <button type="submit" className="btn btn-outline-primary ">
-                    Register
+                    Login
                   </button>
                   {loader && (
                     <div className="spinner-border text-info" role="status">
