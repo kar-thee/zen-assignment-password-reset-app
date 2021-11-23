@@ -46,15 +46,9 @@ const ResetPassword = () => {
     const body = { password, resetCode, email, id };
     const authorizationToken = token;
     console.log({ type, body, authorizationToken }, " api call");
-    const { data, status } = await api_Caller(type, body, authorizationToken);
+    await api_Caller(type, body, authorizationToken);
     setLoader(false);
-    if (status === 200) {
-      //success
-      toast.success(data.msg);
-    } else {
-      //failure
-      toast.error(data.msg);
-    }
+    toast.info("Very well, password changed");
   };
 
   return (
@@ -131,22 +125,3 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
-
-// import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router";
-
-// const ResetPassword = () => {
-//   const { code } = useParams();
-//   const [state, setState] = useState({ token: "", resetCode: "" });
-
-//   useEffect(() => {
-//     const codeArray = code.split("????");
-//     const resetCode = codeArray[0];
-//     const token = codeArray[1];
-//     setState({ resetCode, token });
-//   }, [code]);
-
-//   return <div></div>;
-// };
-
-// export default ResetPassword;
