@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const api_Caller = async (type, body, authorizationHeader = null) => {
+const api_Caller = async (type, body, authorizationToken = null) => {
   try {
     const result = await axios.post(
       `https://whispering-garden-30057.herokuapp.com/user/${type}`,
       body,
       {
         headers: {
-          Authorization: authorizationHeader,
+          Authorization: `BEARER ${authorizationToken}`,
         },
       }
     );
